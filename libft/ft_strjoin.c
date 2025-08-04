@@ -6,7 +6,7 @@
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 20:09:34 by rida-cos          #+#    #+#             */
-/*   Updated: 2025/07/20 14:28:37 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/04 19:12:22 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		s1_len;
-	int		s2_len;
+	size_t	s1_len;
+	size_t	s2_len;
 	char	*joined;
 
 	if (!s1 || !s2)

@@ -6,15 +6,15 @@
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:22:29 by rida-cos          #+#    #+#             */
-/*   Updated: 2025/07/26 16:31:41 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/04 18:25:12 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	while (str[len] != '\0')

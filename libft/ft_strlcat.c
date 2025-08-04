@@ -6,13 +6,13 @@
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:07:54 by rida-cos          #+#    #+#             */
-/*   Updated: 2025/07/20 18:25:19 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/04 18:26:27 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	s_len;
 	size_t	d_len;

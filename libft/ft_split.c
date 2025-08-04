@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdcm <rdcm@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 15:46:42 by rida-cos          #+#    #+#             */
-/*   Updated: 2025/07/30 00:14:14 by rdcm             ###   ########.fr       */
+/*   Updated: 2025/08/02 18:22:23 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,33 +33,36 @@ static int	count_words(char *s, char c)
 	return (count);
 }
 
-static void	get_word(char **string_arr, char *s, char c, int *index)
+static void	free_all(char **arr, int position)
 {
-	int		i;
-	int		j;
-	int		len;
-	char	buffer[8000];
+	while (position--)
+		free(arr[position]);
+	free(arr);
+}
 
-	i = 0;
-	len = ft_strlen(s);
-	while (i < len)
+static int	get_word(char **string_arr, const char *s, char c, int *index)
+{
+	const char	*start;
+	const char	*end;
+
+	while (*s)
 	{
-		while (s[i] == c && i < len)
-			i++;
-		j = 0;
-		while (s[i] != c && s[i] != '\0' && i < len)
-		{
-			buffer[j] = s[i];
-			i++;
-			j++;
-		}
-		if (j > 0)
-		{
-			buffer[j] = '\0';
-			string_arr[*index] = ft_strdup(buffer);
-			(*index)++;
-		}
+		while (*s == c)
+			s++;
+		if (*s == '\0')
+			break ;
+		start = s;
+		end = ft_strchr(s, c);
+		if (end)
+			s = end;
+		else
+			s = s + ft_strlen(s);
+		string_arr[*index] = ft_substr(start, 0, s - start);
+		if (!string_arr[*index])
+			return (0);
+		(*index)++;
 	}
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -73,7 +76,11 @@ char	**ft_split(char const *s, char c)
 	string_arr = malloc(sizeof(char *) * (nbwords + 1));
 	if (!string_arr)
 		return (0);
-	get_word(string_arr, (char *)s, c, &string_index);
+	if (!get_word(string_arr, (char *)s, c, &string_index))
+	{
+		free_all(string_arr, nbwords);
+		return (0);
+	}
 	string_arr[nbwords] = NULL;
 	return (string_arr);
 }

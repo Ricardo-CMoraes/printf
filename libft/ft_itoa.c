@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdcm <rdcm@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 18:38:21 by rida-cos          #+#    #+#             */
-/*   Updated: 2025/07/29 23:50:20 by rdcm             ###   ########.fr       */
+/*   Updated: 2025/08/02 14:22:00 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static void	*fill_number(char *buffer, int i)
 	char	*number;
 
 	number = malloc(sizeof(char) * (i + 1));
+	if (!number)
+		return (0);
 	i = 0;
 	while (buffer[i] != '\0')
 	{
@@ -53,6 +55,8 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	buffer = malloc(sizeof(char) * 13);
+	if (!buffer)
+		return (0);
 	i = 0;
 	if (nb < 0)
 	{

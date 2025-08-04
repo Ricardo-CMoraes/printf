@@ -27,8 +27,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $@ $^
 
-bonus: all $(BONUS_OBJ)
-	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+bonus: .bonus_done
+
+.bonus_done: $(NAME) $(BONUS_OBJ)
+	ar rcs $(NAME) $(BONUS_OBJ)
+	@touch .bonus_done
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
@@ -38,5 +41,7 @@ norm:
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
 fclean:
-	rm -f $(NAME) $(OBJ) $(BONUS_OBJ)
-re:	fclean all
+	rm -f $(NAME) $(OBJ) $(BONUS_OBJ) .bonus_done
+re:	fclean all 
+
+.PHONY: all clean fclean re bonus norm
