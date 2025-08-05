@@ -2,7 +2,7 @@ NAME = libftprintf.a
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 
-SRC = ft_printf.c ft_puthex.c ft_putnbr.c ft_putptr.c ft_putstr.c n_digits.c
+SRC = ft_printf.c ft_puthex.c ft_putnbr_unsigned.c ft_putnbr.c ft_putptr.c ft_putstr.c n_digits.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -23,7 +23,7 @@ $(LIBFT):
 
 norm: 
 		norminette -R *.c *.h
-        
+
 clean:
 	rm -f $(OBJ)
 	make clean -C $(LIBFT_DIR)
