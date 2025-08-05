@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdcm <rdcm@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 00:07:32 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/04 00:34:11 by rdcm             ###   ########.fr       */
+/*   Updated: 2025/08/04 21:09:14 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ static void	ft_putnbr_hex(unsigned long long nb, char type)
 int	ft_puthex(unsigned long long nb, char type)
 {
 	ft_putnbr_hex(nb, type);
-	return (n_digits(nb));
+	return (n_digits(nb, 16));
 }

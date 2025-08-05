@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdcm <rdcm@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 19:54:25 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/04 00:36:25 by rdcm             ###   ########.fr       */
+/*   Updated: 2025/08/04 21:07:53 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_putchar(char c)
 
 static void	ft_putnbr_hex(unsigned long long nbr)
 {
-	int					base_n;
+	unsigned long long	base_n;
 	char				*base;
 	unsigned long long	nb;
 
@@ -50,5 +50,5 @@ int	ft_putptr(void *addr)
 		return (write(1, "0", 1));
 	write(1, "0x", 2);
 	ft_putnbr_hex((unsigned long long)addr);
-	return (n_digits((unsigned long long)addr) + 2);
+	return (n_digits((unsigned long long)addr, 16) + 2);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdcm <rdcm@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 23:06:09 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/04 00:35:07 by rdcm             ###   ########.fr       */
+/*   Updated: 2025/08/04 21:08:21 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ static void	put_int(int n, int fd)
 int	ft_putnbr(int n, int fd)
 {
 	put_int(n, fd);
-	return (n_digits(n));
+	return (n_digits(n, 10));
 }

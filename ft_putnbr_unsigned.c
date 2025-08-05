@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   n_digits.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/03 23:16:15 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/04 21:08:13 by rida-cos         ###   ########.fr       */
+/*   Created: 2025/08/03 23:06:09 by rdcm              #+#    #+#             */
+/*   Updated: 2025/08/04 21:08:31 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-unsigned long long	n_digits(unsigned long long n, size_t base)
+static void	put_int(unsigned int n, int fd)
 {
-	size_t	count;
+	char	c;
 
-	count = 0;
-	if (n == 0)
-		return (1);
-	while (n != 0)
+	if (n < 0)
 	{
-		count += 1;
-		n /= base;
+		write (fd, "-", 1);
+		n = (-1) * n;
 	}
-	return (count);
+	if (n >= 10)
+	{
+		put_int(n / 10, fd);
+		n = n % 10;
+	}
+	if (n < 10)
+	{
+		c = n + '0';
+		write(fd, &c, 1);
+	}
+}
+
+unsigned int	ft_putnbr_unsigned(unsigned int n, int fd)
+{
+	put_int(n, fd);
+	return (n_digits(n, 10));
 }
