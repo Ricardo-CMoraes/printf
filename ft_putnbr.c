@@ -6,11 +6,11 @@
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 23:06:09 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/04 21:08:21 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/04 21:29:44 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static void	put_int(int n, int fd)
 {

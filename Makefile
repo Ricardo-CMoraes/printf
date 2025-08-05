@@ -19,10 +19,10 @@ $(LIBFT):
 	make bonus -C $(LIBFT_DIR)
 
 %.o: %.c
-		$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 norm: 
-		norminette -R *.c *.h
+	norminette -R *.c *.h
 
 clean:
 	rm -f $(OBJ)
@@ -33,4 +33,4 @@ fclean: clean
 	make fclean -C $(LIBFT_DIR)
 re:		fclean all
 
-.PHONY: all clean fclean re bonus norm
+.PHONY: all clean fclean re norm

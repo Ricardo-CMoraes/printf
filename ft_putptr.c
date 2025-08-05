@@ -6,11 +6,11 @@
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 19:54:25 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/04 21:07:53 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/04 21:29:49 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static void	ft_putchar(char c)
 {

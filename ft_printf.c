@@ -6,11 +6,11 @@
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 16:16:57 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/04 21:14:57 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/04 21:28:35 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	convert(char type, va_list arg)
 {

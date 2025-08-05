@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdcm <rdcm@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 23:02:58 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/03 23:28:29 by rdcm             ###   ########.fr       */
+/*   Updated: 2025/08/04 21:29:53 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *s, int fd)
 {
