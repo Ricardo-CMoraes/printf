@@ -6,7 +6,7 @@
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 19:54:25 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/04 21:29:49 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/07 21:45:07 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	ft_putnbr_hex(unsigned long long nbr)
 int	ft_putptr(void *addr)
 {
 	if (addr == 0)
-		return (write(1, "0", 1));
+		return (write(1, "(nil)", 5));
 	write(1, "0x", 2);
 	ft_putnbr_hex((unsigned long long)addr);
 	return (n_digits((unsigned long long)addr, 16) + 2);

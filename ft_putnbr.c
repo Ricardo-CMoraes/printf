@@ -6,7 +6,7 @@
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 23:06:09 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/04 21:29:44 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/07 21:15:35 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,14 @@ static void	put_int(int n, int fd)
 
 int	ft_putnbr(int n, int fd)
 {
+	unsigned long long	nb;
+
 	put_int(n, fd);
-	return (n_digits(n, 10));
+	if (n >= 0)
+		return (n_digits(n, 10));
+	else
+	{
+		nb = (unsigned long long)n * -1;
+		return (1 + n_digits(nb, 10));
+	}
 }
