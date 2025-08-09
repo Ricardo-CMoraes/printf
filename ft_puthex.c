@@ -6,7 +6,7 @@
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 00:07:32 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/04 21:29:16 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/09 15:15:25 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ static void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-static void	ft_putnbr_hex(unsigned long long nb, char type)
+static void	ft_putnbr_hex(unsigned int nb, char type)
 {
-	char				*base_upper;
-	char				*base_lower;
+	char	*base_upper;
+	char	*base_lower;
 
 	base_upper = "0123456789ABCDEF";
 	base_lower = "0123456789abcdef";
@@ -43,7 +43,7 @@ static void	ft_putnbr_hex(unsigned long long nb, char type)
 	}
 }
 
-int	ft_puthex(unsigned long long nb, char type)
+int	ft_puthex(unsigned int nb, char type)
 {
 	ft_putnbr_hex(nb, type);
 	return (n_digits(nb, 16));

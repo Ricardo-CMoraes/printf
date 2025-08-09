@@ -6,7 +6,7 @@
 /*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 16:16:57 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/07 21:50:18 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/09 15:42:09 by rida-cos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	convert(char type, va_list arg)
 	else if (type == 'u')
 		return (ft_putnbr_unsigned(va_arg(arg, int), 1));
 	else if (type == 'x' || type == 'X' )
-		return (ft_puthex(va_arg(arg, unsigned long long), type));
+		return (ft_puthex(va_arg(arg, unsigned int), type));
 	else if (type == '%')
 		return (write(1, "%", 1));
 	return (0);
@@ -58,65 +58,65 @@ int	ft_printf(const char *text, ...)
 	return (len);
 }
 
-#include <limits.h>
+// #include <limits.h>
 
-int	main(void)
-{
-	char *s = "Ricardo";
-	int nb_ft_printf;
-	int nb_printf;
+// int	main(void)
+// {
+// 	char *s = "Ricardo";
+// 	int nb_ft_printf;
+// 	int nb_printf;
 
-	printf("\nTeste com Caracter: %%c\n");
-	nb_ft_printf = ft_printf("	Imprimindo Caracter: %c\n", 'R');
-	nb_printf = printf("	Imprimindo Caracter: %c\n", 'R');
-	printf("	num_ft_printf:	%d\n", nb_ft_printf);
-	printf("	num_printf:	%d\n", nb_printf);
+// 	printf("\nTeste com Caracter: %%c\n");
+// 	nb_ft_printf = ft_printf("	Imprimindo Caracter: %c\n", 'R');
+// 	nb_printf = printf("	Imprimindo Caracter: %c\n", 'R');
+// 	printf("	num_ft_printf:	%d\n", nb_ft_printf);
+// 	printf("	num_printf:	%d\n", nb_printf);
 
-	printf("\nTeste com Caracter: %%s\n");
-	nb_ft_printf = ft_printf("	Imprimindo Caracter: %s\n", NULL);
-	nb_printf = printf("	Imprimindo Caracter: %s\n", (char *)NULL); //" NULL %s NULL ", NULL "	Imprimindo Caracter: %s\n", "Ricardo Moraes"
-	printf("	num_ft_printf:	%d\n", nb_ft_printf);
-	printf("	num_printf:	%d\n", nb_printf);
+// 	printf("\nTeste com Caracter: %%s\n");
+// 	nb_ft_printf = ft_printf("	Imprimindo Caracter: %s\n", NULL);
+// 	nb_printf = printf("	Imprimindo Caracter: %s\n", (char *)NULL);
+// 	printf("	num_ft_printf:	%d\n", nb_ft_printf);
+// 	printf("	num_printf:	%d\n", nb_printf);
 
-	printf("\nTeste com Ponteiro: %%p\n");
-	nb_ft_printf = ft_printf("	Endereço do Ponteiro: %p\n", 0);
-	nb_printf = printf("	Endereço do Ponteiro: %p\n", (void *)0);
-	printf("	num_ft_printf:	%d\n", nb_ft_printf);
-	printf("	num_printf:	%d\n", nb_printf);
+// 	printf("\nTeste com Ponteiro: %%p\n");
+// 	nb_ft_printf = ft_printf("	Endereço do Ponteiro: %p\n", 0);
+// 	nb_printf = printf("	Endereço do Ponteiro: %p\n", (void *)0);
+// 	printf("	num_ft_printf:	%d\n", nb_ft_printf);
+// 	printf("	num_printf:	%d\n", nb_printf);
 
-	printf("\nTeste com Inteiro: %%d\n");
-	nb_ft_printf = ft_printf("	Numero inteiro: %d\n", INT_MIN);
-	nb_printf = printf("	Numero inteiro: %d\n", INT_MIN);
-	printf("	num_ft_printf:	%d\n", nb_ft_printf);
-	printf("	num_printf:	%d\n", nb_printf);
+// 	printf("\nTeste com Inteiro: %%d\n");
+// 	nb_ft_printf = ft_printf("	Numero inteiro: %d\n", INT_MIN);
+// 	nb_printf = printf("	Numero inteiro: %d\n", INT_MIN);
+// 	printf("	num_ft_printf:	%d\n", nb_ft_printf);
+// 	printf("	num_printf:	%d\n", nb_printf);
 
-	printf("\nTeste com Inteiro: %%i\n");
-	nb_ft_printf = ft_printf("	Numero inteiro: %i\n", -2147483647);
-	nb_printf = printf("	Numero inteiro: %i\n", -2147483647);
-	printf("	num_ft_printf:	%d\n", nb_ft_printf);
-	printf("	num_printf:	%d\n", nb_printf);
+// 	printf("\nTeste com Inteiro: %%i\n");
+// 	nb_ft_printf = ft_printf("	Numero inteiro: %i\n", -2147483647);
+// 	nb_printf = printf("	Numero inteiro: %i\n", -2147483647);
+// 	printf("	num_ft_printf:	%d\n", nb_ft_printf);
+// 	printf("	num_printf:	%d\n", nb_printf);
 
-	printf("\nTeste com Inteiro: %%u\n");
-	nb_ft_printf = ft_printf("	Numero inteiro: %u\n", 12);
-	nb_printf = printf("	Numero inteiro: %u\n", 12);
-	printf("	num_ft_printf:	%d\n", nb_ft_printf);
-	printf("	num_printf:	%d\n", nb_printf);
+// 	printf("\nTeste com Inteiro: %%u\n");
+// 	nb_ft_printf = ft_printf("	Numero inteiro: %u\n", 12);
+// 	nb_printf = printf("	Numero inteiro: %u\n", 12);
+// 	printf("	num_ft_printf:	%d\n", nb_ft_printf);
+// 	printf("	num_printf:	%d\n", nb_printf);
 
-	printf("\nTeste com hexadecimal: %%x\n");
-	nb_ft_printf = ft_printf("	Numero inteiro: %x\n", 255);
-	nb_printf = printf("	Numero inteiro: %x\n", 255);
-	printf("	num_ft_printf:	%d\n", nb_ft_printf);
-	printf("	num_printf:	%d\n", nb_printf);
+// 	printf("\nTeste com hexadecimal: %%x\n");
+// 	nb_ft_printf = ft_printf("	Numero inteiro: %x\n", LONG_MAX);
+// 	nb_printf = printf("	Numero inteiro: %x\n", LONG_MAX);
+// 	printf("	num_ft_printf:	%d\n", nb_ft_printf);
+// 	printf("	num_printf:	%d\n", nb_printf);
 
-	printf("\nTeste com HEXADECIMAL: %%X\n");
-	nb_ft_printf = ft_printf("	Numero inteiro: %X\n", 255);
-	nb_printf = printf("	Numero inteiro: %X\n", 255);
-	printf("	num_ft_printf:	%d\n", nb_ft_printf);
-	printf("	num_printf:	%d\n", nb_printf);
+// 	printf("\nTeste com HEXADECIMAL: %%X\n");
+// 	nb_ft_printf = ft_printf("	Numero inteiro: %X\n", LONG_MIN);
+// 	nb_printf = printf("	Numero inteiro: %X\n", LONG_MIN);
+// 	printf("	num_ft_printf:	%d\n", nb_ft_printf);
+// 	printf("	num_printf:	%d\n", nb_printf);
 
-	printf("\nTeste com %%:\n");
-	nb_ft_printf = ft_printf("	Numero inteiro: 100%%\n");
-	nb_printf = printf("	Numero inteiro: 100%%\n");
-	printf("	num_ft_printf:	%d\n", nb_ft_printf);
-	printf("	num_printf:	%d\n", nb_printf);
-}
+// 	printf("\nTeste com %%:\n");
+// 	nb_ft_printf = ft_printf("	Numero inteiro: 100%%\n");
+// 	nb_printf = printf("	Numero inteiro: 100%%\n");
+// 	printf("	num_ft_printf:	%d\n", nb_ft_printf);
+// 	printf("	num_printf:	%d\n", nb_printf);
+// }
