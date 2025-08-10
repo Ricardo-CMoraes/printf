@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rida-cos <rida-cos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rdcm <rdcm@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 19:54:25 by rdcm              #+#    #+#             */
-/*   Updated: 2025/08/07 21:45:07 by rida-cos         ###   ########.fr       */
+/*   Updated: 2025/08/09 21:41:34 by rdcm             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,6 @@ static void	ft_putnbr_hex(unsigned long long nbr)
 	nb = nbr;
 	if (base_n <= 1)
 		return ;
-	if (nb < 0)
-	{
-		write (1, "-", 1);
-		nb = -nb;
-	}
 	if (nb >= base_n)
 	{
 		ft_putnbr_hex(nb / base_n);
